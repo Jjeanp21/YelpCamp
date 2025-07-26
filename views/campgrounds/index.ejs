@@ -1,13 +1,11 @@
 <!--To pass this layout to our boilerplate template in layouts folder.
 Will be inserted in body of boilerplate. -->
 <%layout('layouts/boilerplate')%>
-<div id="cluster-map"></div>
-    <h1>
+    <h1 class="text-center">
         Campgrounds Home Page
     </h1>
-    <div>
-        <a href="/campgrounds/new">Create New Campground</a>
-    </div>
+    <div id="cluster-map"></div>
+    <br>
     <% for(let cg of cgrounds){%>
         <div class="card mb-3">
             <div class="row">
