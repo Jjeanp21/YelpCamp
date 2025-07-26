@@ -32,7 +32,7 @@ Will be inserted in body of boilerplate. -->
                         required><%= cground.description %></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label"></label>
+                    <label for="image" class="form-label">Photo(s):</label>
                     <input class="form-control form-control-sm" id="image" type="file" name="image" multiple>
                 </div>
                 <div class="mb-3" alt="...">
@@ -46,6 +46,6 @@ Will be inserted in body of boilerplate. -->
                 </div>
                 <button class="btn btn-outline-primary mb-3">Update Campground</button>
             </form>
-            <a href="/campgrounds/<%= cground._id %>">Back to Campground</a>
+            <a class="btn btn-primary" href="/campgrounds/<%= cground._id %>">Back</a>
         </div>
     </div>
