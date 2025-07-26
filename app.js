@@ -123,8 +123,6 @@ app.use(session(sessionConfig))
 app.use(flash())
 app.use(helmet()); //enable all of helmet's middleware
 
-
-
 //Set content security default sources
 /* Set or restrict what outside sources can be implented in project. */
 const scriptSrcUrls = [
@@ -165,11 +163,6 @@ app.use(helmet.contentSecurityPolicy({
         fontSrc: ["'self'", ...fontSrcUrls],
     }
 }));
-
-
-
-
-
 
 //passport middleware
 app.use(passport.initialize())
