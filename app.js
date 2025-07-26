@@ -55,11 +55,11 @@ const sanitizeV5 = require('./utils/mongoSanitizeV5.js');
 
 const helmet = require('helmet')
 
-//const dbUrl = process.env.DB_URL
+const dbUrl = process.env.DB_URL
 
 const MongoStore = require('connect-mongo');
 
-const dbUrl = 'mongodb://localhost:27017/yelpcamp';
+//const dbUrl = 'mongodb://localhost:27017/yelpcamp';
 //Connect to mongo DB. Then pass in options
 //mongoose.connect('mongodb://localhost:27017/yelpcamp'); //local DB
 mongoose.connect(dbUrl) //cloud DB
