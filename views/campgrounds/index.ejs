@@ -1,0 +1,42 @@
+<!--To pass this layout to our boilerplate template in layouts folder.
+Will be inserted in body of boilerplate. -->
+<%layout('layouts/Boilerplate')%>
+<div id="cluster-map"></div>
+    <h1>
+        Campgrounds Home Page
+    </h1>
+    <div>
+        <a href="/campgrounds/new">Create New Campground</a>
+    </div>
+    <% for(let cg of cgrounds){%>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(cg.images.length){ %>
+                        <img crossorigin="anonymous" class="img-fluid" alt="" src="<%= cg.images[0].url %>">
+                        <% } else { %>
+                            <img crossorigin="anonymous" class="img-fluid" alt="" src="https://res.cloudinary.com/dfdpkzx7c/image/upload/v1752339511/YelpCamp/xpg8lafrf1mzip88hpel.jpg">
+                            <% } %>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= cg.title %></h5>
+                            <p class="card-text"><%= cg.description %></p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <%= cg.location %>
+                                </small>
+                            </p>
+                            <a href="/campgrounds/<%= cg._id %>" class="btn btn-primary">View <%= cg.title %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <script>
+            const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
+            const campgrounds = { features: <%- JSON.stringify(cgrounds) %>};
+        </script>
+
+        <script src="/javascripts/clusterMap.js"></script>
